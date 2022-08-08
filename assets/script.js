@@ -1,5 +1,4 @@
 //  Arreglo Radiología
-
 let radiologia=[
 {
 hora:'11:00',
@@ -38,10 +37,8 @@ prevision: 'Fonasa',
 },
 ]
 
-let tabla1=
-'<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Previsión</th></tr>'
-for (let i=0; i<radiologia.length ;i++){
-    tabla1+=
+let tabla1='<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Previsión</th></tr>'
+for (let i=0; i<radiologia.length ;i++){ tabla1+=
     `<tr>
     <td>${radiologia[i].hora}</td>
      <td>${radiologia[i].especialista}</td>
@@ -51,7 +48,9 @@ for (let i=0; i<radiologia.length ;i++){
      </tr>`
 
 }
-document.getElementById("tabla-radiologia").innerHTML=tabla1;
+//imprimir el cuadro vacío y llenarlo con la iteración del array radiología.
+document.getElementById("tabla-radiologia").innerHTML = tabla1;
+//imprimir la primera atención de radiología y su previsión, imprimir la ultima atención de radiología y su previsión
 document.getElementById("info-radiologia").innerHTML=`Primera atención: ${radiologia[0].paciente}-${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length-1].paciente}-${radiologia[radiologia.length-1].prevision}.`
 
 //Arreglo Traumatología
@@ -119,7 +118,9 @@ for (let i=0;i<traumatologia.length;i++){
      <td>${traumatologia[i].prevision}</td>
      </tr>`
 }
-document.getElementById("tabla-traumatologia").innerHTML=tabla2;
+//imprimir el cuadro vacío y llenarlo con la iteración del array traumatología
+document.getElementById("tabla-traumatologia").innerHTML = tabla2;
+//imprimir la primera atención de traumatología y su previsión, imprimir la ultima atención de traumatología y su previsión
 document.getElementById("info-traumatologia").innerHTML=`Primera atención: ${traumatologia[0].paciente}-${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length-1].paciente}-${traumatologia[traumatologia.length-1].prevision}.`
 
 // Arreglo Dental
@@ -167,6 +168,8 @@ rut: '14441281-0',
 prevision: 'Isapre',
 },
 ]
+
+//imprimir el cuadro vacío y llenarlo con la iteración del array dental
 let tabla3=
 '<tr><th>Hora</th><th>Especialista</th><th>Paciente</th><th>Rut</th><th>Previsión</th></tr>'
 for (let i=0;i<dental.length;i++){
@@ -179,5 +182,6 @@ for (let i=0;i<dental.length;i++){
      <td>${dental[i].prevision}</td>
      </tr>`
 }
+//imprimir la primera atención de traumatología y su previsión, imprimir la ultima atención de traumatología y su previsión
 document.getElementById("tabla-dental").innerHTML=tabla3
 document.getElementById("info-dental").innerHTML=`Primera atención: ${dental[0].paciente}-${dental[0].prevision} | Última atención: ${dental[dental.length-1].paciente}-${dental[dental.length-1].prevision}.`
